@@ -7,4 +7,8 @@
     <string name="imgDescriptionRecipe">Imagen de receta</string>
     <string name="txtCerrar">Cerrar</string>
     <string name="txtMapa">Mapa</string>
+    <string name="txtBuscarPor">Buscar por:</string>
+    <string name="txtSearchName">Nombre</string>
+    <string name="txtSearchIngredient">Ingrediente</string>
+    <string name="txtSync">Sync</string>
 </resources>

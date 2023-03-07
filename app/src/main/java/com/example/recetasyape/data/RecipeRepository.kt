@@ -2,8 +2,6 @@ package com.example.recetasyape.data
 
 import com.example.recetasyape.data.database.dao.RecipesDao
 import com.example.recetasyape.data.database.entities.RecipeEntity
-import com.example.recetasyape.data.model.RecipeModel
-import com.example.recetasyape.data.model.RecipeProvider
 import com.example.recetasyape.data.network.RecipeService
 import com.example.recetasyape.domain.model.Recipe
 import com.example.recetasyape.domain.model.toDomain
@@ -26,11 +24,6 @@ class RecipeRepository @Inject constructor(
 
     suspend fun insertRecipes(recipes:List<RecipeEntity>){
         recipeDao.insertAll(recipes)
-    }
-
-    suspend fun getRecipeDB(name:String): Recipe{
-        val response = recipeDao.getRecipe(name)
-        return response.toDomain()
     }
 
     suspend fun clearRecipes(){

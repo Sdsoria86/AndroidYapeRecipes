@@ -1,14 +1,9 @@
 package com.example.recetasyape.ui.view
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recetasyape.R
@@ -41,10 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         recipeViewModel.onCreate()
 
-        recipeViewModel.recipeModel.observe(this, Observer {
+        recipeViewModel.recipeModel.observe(this) {
             recipesList = it.toMutableList()
             initRecyclerViewRecipes()
-        })
+        }
 
         binding.apply {
 
@@ -87,6 +82,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(recipe: Recipe){
-        supportFragmentManager.beginTransaction().replace(R.id.containerFragment, RecipeDetailFragment(recipe)).commit();
+        supportFragmentManager.beginTransaction().replace(R.id.containerFragment, RecipeDetailFragment(recipe)).commit()
     }
 }

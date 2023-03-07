@@ -1,10 +1,8 @@
 package com.example.recetasyape.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.recetasyape.data.model.RecipeModel
 import com.example.recetasyape.domain.GetRecipeSyncUseCase
 import com.example.recetasyape.domain.GetRecipesUseCase
 import com.example.recetasyape.domain.model.Recipe
@@ -27,9 +25,8 @@ class RecipeViewModel @Inject constructor(
     fun onCreate(){
         viewModelScope.launch {
             val result = getRecipesUseCase()
-            if (!result.isNullOrEmpty()){
+            if (result.isNotEmpty()){
                 recipeModel.postValue(result)
-                Log.d("DATOS", "Los datos son: "+result)
             }
         }
     }
@@ -37,9 +34,8 @@ class RecipeViewModel @Inject constructor(
     fun onSync(){
         viewModelScope.launch {
             val result = getRecipeSyncUseCase()
-            if (!result.isNullOrEmpty()){
+            if (result.isNotEmpty()){
                 recipeModel.postValue(result)
-                Log.d("DATOS", "Los datos son: "+result)
             }
         }
     }

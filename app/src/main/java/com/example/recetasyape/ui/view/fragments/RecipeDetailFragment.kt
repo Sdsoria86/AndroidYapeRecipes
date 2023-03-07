@@ -9,26 +9,19 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.recetasyape.databinding.FragmentRecipeDetailBinding
 import com.example.recetasyape.domain.model.Recipe
-import com.example.recetasyape.ui.view.MainActivity
 import com.example.recetasyape.ui.view.MapActivity
-import dagger.Provides
 import javax.inject.Inject
 
 
 class RecipeDetailFragment @Inject constructor(private val recipe: Recipe) : Fragment() {
 
     private var _binding: FragmentRecipeDetailBinding? = null
-    val binding get( ) = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private val binding get( ) = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRecipeDetailBinding.inflate(inflater, container, false)
 
         binding.apply {

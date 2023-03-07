@@ -8,7 +8,7 @@ import com.example.recetasyape.domain.model.Recipe
 
 class RecipeViewHolder(view: View):RecyclerView.ViewHolder(view) {
 
-    val binding = CardRecipeBinding.bind(view)
+    private val binding = CardRecipeBinding.bind(view)
 
     fun render(recipe: Recipe, onClickListener:(Recipe) -> Unit){
         binding.apply {

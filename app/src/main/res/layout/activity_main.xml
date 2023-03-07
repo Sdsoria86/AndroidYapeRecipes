@@ -33,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Sync"
+            android:text="@string/txtSync"
             android:layout_margin="@dimen/d_5"
             android:background="@color/ligth_primary"
             android:textColor="@color/dark_second"/>
@@ -54,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:text="Buscar por: "
+            android:text="@string/txtBuscarPor"
             android:gravity="center"
             android:textColor="@color/ligth_primary"/>
 
@@ -72,13 +72,13 @@
                 android:id="@+id/radioName"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Nombre"
+                android:text="@string/txtSearchName"
                 android:textColor="@color/ligth_primary"/>
             <RadioButton
                 android:id="@+id/radioIngredient"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Ingrediente"
+                android:text="@string/txtSearchIngredient"
                 android:textColor="@color/ligth_primary"/>
 
         </RadioGroup>
@@ -102,7 +102,10 @@
         android:textColor="@color/white"
         android:hint="@string/txtBuscar"
         android:paddingStart="@dimen/d_10"
-        android:imeOptions="actionDone"/>
+        android:imeOptions="actionDone"
+        tools:ignore="RtlSymmetry"
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerRecipes"

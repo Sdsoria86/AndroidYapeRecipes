@@ -1,6 +1,5 @@
 package com.example.recetasyape.data.model
 
-import com.example.recetasyape.data.network.RecipeService
 import javax.inject.Inject
 import javax.inject.Singleton
 
