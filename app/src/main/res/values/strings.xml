@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecetasYape</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="titleHome">HOME</string>
+    <string name="txtBuscar">Buscar</string>
+    <string name="imgDescriptionRecipe">Imagen de receta</string>
+    <string name="txtCerrar">Cerrar</string>
+    <string name="txtMapa">Mapa</string>
+</resources>

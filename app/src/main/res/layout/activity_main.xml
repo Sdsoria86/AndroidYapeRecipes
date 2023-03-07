@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_primary"
+    tools:context=".ui.view.MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearTileBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvRecetas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/titleHome"
+            android:textColor="#ECFFFB"
+            android:textSize="@dimen/s_20"
+            android:gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Sync"
+            android:layout_margin="@dimen/d_5"
+            android:background="@color/ligth_primary"
+            android:textColor="@color/dark_second"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/linearRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearTileBar"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="Buscar por: "
+            android:gravity="center"
+            android:textColor="@color/ligth_primary"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecetas"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Nombre"
+                android:textColor="@color/ligth_primary"/>
+            <RadioButton
+                android:id="@+id/radioIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ingrediente"
+                android:textColor="@color/ligth_primary"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/etFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearRadio"
+        android:layout_marginVertical="@dimen/d_5"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColorHint="@color/hilt_et"
+        android:shadowColor="@color/white"
+        android:textColor="@color/white"
+        android:hint="@string/txtBuscar"
+        android:paddingStart="@dimen/d_10"
+        android:imeOptions="actionDone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRecipes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etFilter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="@dimen/d_10"
+        android:layout_marginHorizontal="@dimen/d_10"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/containerFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="@dimen/d_20"
+        android:layout_marginHorizontal="@dimen/d_20"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
